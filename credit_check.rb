@@ -52,10 +52,15 @@ class Card_Reader
   end
 
   def credit_check(card_number)
+    #this method turns the card # into a reversed int array,
     reverse_array = number_splitter(card_number)
+    #then doubles alternating values as stipulated
     doubler(reverse_array)
-    corrected_array =double_digit_check(reverse_array)
+    #then adds the tens and ones places on relevant ints
+    corrected_array = double_digit_check(reverse_array)
+    #adds them all together
     sum = summation(corrected_array)
+    #then vero
     valid?(sum)
   end
 end
